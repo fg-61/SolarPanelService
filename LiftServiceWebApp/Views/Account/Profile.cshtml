@@ -1,0 +1,84 @@
+﻿@model UserProfileViewModel
+
+@{ ViewBag.Title = $"{Model.Name} {Model.Surname} Profil Sayfası"; }
+<style>
+    .center {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+        padding-bottom: 120px;
+    }
+</style>
+<!--====== Shoping Checkout Start  ======-->
+<section class="ss_index_one">
+    <div class="container-fluid">
+        <div class="user-actions mb-40">
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+
+        @*--------Partialla---------*@
+        <div class="ss_breadcrumb text-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Profil Güncelleme</h1>
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Index">Giriş</a><span> / Profil Güncelleme</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*--------Partialla---------*@
+
+        <form method="post" class="center" center asp-controller="Account" asp-action="Profile">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div>
+                        <h3 class="title">Profil Güncelleme</h3>
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <div class="form-group">
+                                    <label asp-for="Email"></label>
+                                    <input asp-for="Email" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-9"></div>
+
+                            <div class="col-lg-9">
+                                <div class="form-group">
+                                    <label asp-for="Name"></label>
+                                    <input asp-for="Name" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-9"></div>
+
+                            <div class="col-lg-9">
+                                <div class="form-group">
+                                    <label asp-for="Surname"></label>
+                                    <input asp-for="Surname" />
+                                    <span asp-validation-for="Surname" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-9"></div>
+                            <div class="col-lg-9"></div>
+
+                            <div class="s_jump_page">
+                                <button type="submit" class="ss_btn submitForm">Güncelle</button>
+                                <div class="response"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
